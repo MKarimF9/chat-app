@@ -8,6 +8,9 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+    rel="stylesheet">
   <title>Frontend Mentor | [Challenge Name Here]</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,15 +18,22 @@
     .attribution {
       font-size: 0.6875rem;
       text-align: center;
+      
     }
 
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
   </style>
+  <style type="text/tailwindcss">
+    @theme{
+        --font-rubik: Rubik, sans-serif;
+      }
+
+ </style>
 </head>
 
-<body class="bg-gray-100 text-[16px]">
+<body class="bg-gray-100 text-[16px] font-rubik">
 
 
   <main class="flex flex-col gap-10 items-center justify-center min-h-screen md:flex-row md:gap-40">
@@ -31,10 +41,15 @@
 
     <div class="border-6 border-white rounded-3xl w-80 shadow-md bg-white ">
       <header class="flex bg-linear-65 from-purple-500 to-pink-500 p-4 gap-2 rounded-3xl ">
-        <img src="./images/avatar.jpg" alt="Profile picture of Samuel Green" class="rounded-full w-12">
+        <button class="text-white text-lg" aria-label="Back">&lt;</button>
+        <img src="./images/avatar.jpg" alt="Profile picture of Samuel Green"
+          class="rounded-full w-12 border-2 border-white">
         <div class="flex flex-col">
-          <h2>Samuel Green</h2>
-          <p>Available to Walk</p>
+          <h2 class="text-white">Samuel Green</h2>
+          <p class="text-purple-300">Available to Walk</p>
+        </div>
+        <div class=" ml-auto">
+          <button class="text-white text-lg" aria-label="Menu">&#8942;</button>
         </div>
       </header>
 
@@ -42,9 +57,9 @@
       <div class=" flex flex-col gap-2">
 
         <!-- received -->
-        <div class="bg-purple-200 rounded-2xl p-2 max-w-3/4">That sounds great. I’d be happy with that.</div>
+        <div class="bg-purple-200 text-purple-600 rounded-2xl p-2 max-w-3/4">That sounds great. I’d be happy with that.</div>
 
-        <div class="bg-purple-200 rounded-2xl p-2 max-w-3/4">Could you send over some pictures of your dog, please?
+        <div class="bg-purple-200 rounded-2xl text-purple-600 p-2 max-w-3/4">Could you send over some pictures of your dog, please?
         </div>
 
 
@@ -57,33 +72,44 @@
         </div>
 
         <div class=" flex flex-col items-end p-2 ">
-          <div class="bg-white rounded-2xl max-w-3/4">Here are a few pictures. She’s a happy girl!</div>
-          <div class="bg-white rounded-2xl p-2">Can you make it?</div>
+          <div class="bg-white  text-gray-500 rounded-2xl max-w-3/4">Here are a few pictures. She’s a happy girl!</div>
+          <div class="bg-white  text-gray-500 rounded-2xl p-2">Can you make it?</div>
         </div>
 
         <!-- received -->
 
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 text-purple-600">
           <div class="bg-purple-200 rounded-2xl p-2 max-w-3/4">She looks so happy! The time we discussed works. How long
             shall I take her out for?</div>
 
-          <div class=" bg-linear-65 from-purple-500 to-pink-500 rounded-2xl p-2 flex justify-between max-w-3/4">
-            <div class="">30 minute walk</div>
-            <div class="font-bold text-white">$29</div>
+          <div
+            class="bg-linear-65 from-purple-500 to-pink-500 rounded-2xl p-2 flex justify-between max-w-3/4 text-white">
+            <div class="flex items-center gap-2">
+              <div class="border-2 rounded-full w-6 h-6"></div>
+              <div class="">30 minute walk</div>
+            </div>
+            <div class="font-bold">$29</div>
           </div>
 
-          <div class="bg-linear-65 from-purple-500 to-pink-500 rounded-2xl p-2 flex justify-between max-w-3/4">
-            <div class="">1 hour walk</div>
-            <div class="font-bold text-white">$49</div>
+          <div
+            class="bg-linear-65 from-purple-500 to-pink-500 rounded-2xl p-2 flex justify-between max-w-3/4 text-white">
+            <div class="flex items-center gap-2">
+              <div class="border-2 rounded-full w-6 h-6"></div>
+              <div class="">1 hour walk</div>
+            </div>
+            <div class="font-bold">$49</div>
           </div>
         </div>
 
-        <div class="p-3">Type a message…</div>
+        <div class=" p-3 rounded-4xl flex justify-between bg-white items-center">
+          <div class="">Type a message…</div>
+          <button class="bg-purple-950  w-8 h-8 rounded-full text-white text-lg" aria-label="Send message">&gt;</button>
+        </div>
       </div>
     </div>
     <div class="flex flex-col w-md">
-      <h1>Simple booking</h1>
-      <p>
+      <h1 class="text-purple-950  text-3xl font-bold p-4 ">Simple booking</h1>
+      <p class="text-gray-500">
         Stay in touch with our dog walkers through the chat interface. This makes it easy to
         discuss arrangements and make bookings. Once the walk has been completed you can rate
         your walker and book again all through the chat.
